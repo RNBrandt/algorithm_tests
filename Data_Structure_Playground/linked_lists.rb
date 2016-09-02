@@ -26,7 +26,7 @@ class Linked_list < Node_sorter
   end
 
   def add_ordered_node(value)
-    # node = Node.new(value)
+    node = Node.new(value)
     if !@tail
       @tail = node
       @root = node
