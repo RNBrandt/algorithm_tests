@@ -13,11 +13,8 @@ class Linked_list < Node_sorter
     @root = nil
   end
 
-  def add_unordered_node(node)
-    if node.is_a?(Integer)
-      node = Node.new(node)
-    end
-    # node = Node.new(value)
+  def add_unordered_node(value)
+    node = Node.new(value)
     if !@tail
       @tail = node
       @root = node
