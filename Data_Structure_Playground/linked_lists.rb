@@ -33,25 +33,27 @@ class Linked_list < Node_sorter
       @root = node
     elsif node.value <= @root.value
       temp = @root
-      node.bigger = temp
-      temp.smaller = node
       @root = node
+      @root.bigger = temp
+      temp.smaller = @root
     elsif node.value >= @tail.value
       temp = @tail
       node.smaller = temp
       temp.bigger = node
       @tail = node
     else
-      # current is the smallest, so increase the 'current' node until it's greater than the new node
       until current.value >= node.value
+        p "until current value #{current.value}"
         current = current.bigger
       end
-      # once the current is larger than the node. I want to 1) take the node.smaller and make it the value from the current.smaller
+      p "current.value #{current.value} node.value #{node.value}"
       node.smaller = current.smaller
-      # take the current.smaller value be the node
+      current.smaller.bigger = node
+      p "current.smaller #{current.smaller.value} node.smaller #{node.smaller.value}"
       current.smaller = node
-      #take the node.bigger value and make it current
+      p "current.smaller #{current.smaller.value}"
       node.bigger = current
+      puts "node.bigger #{node.bigger.value}"
     end
   end
 
@@ -75,25 +77,3 @@ class Linked_list < Node_sorter
 end
 
 
-list = Linked_list.new
-
-p list.add_ordered_node(8)
-p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-p list
-p "***************************************"
-p list.add_ordered_node(2)
-p "***************************************"
-p list
-p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-p list.add_ordered_node(5)
-p "***************************************"
-p list
-# p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-# list.add_ordered_node(15)
-
-# p list
-
-# p list.root.value
-# p list.root.bigger.value
-# p list.root.bigger.bigger.value
-# p list.root.bigger.bigger.bigger.value
