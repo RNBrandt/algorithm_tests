@@ -64,5 +64,23 @@ describe '#Linked_list' do
       expect(list.find_nth_from_end(2)).to equal(5)
     end
   end
+  context "When breaking nodes from the linked list to be sorted" do
+    it "will create an array" do
+      list.add_unordered_node(8)
+      list.add_unordered_node(2)
+      list.add_unordered_node(5)
+      list.add_unordered_node(15)
+      expect(list.break_nodes).to be_an(Array)
+    end
+    it "will create an array of nodes" do
+      list.add_unordered_node(8)
+      list.add_unordered_node(15)
+      expect(list.break_nodes[1]).to be_a(Node)
+    end
+    it "will have nodes with the correct values" do
+      list.add_unordered_node(8)
+      expect(list.break_nodes[0].value).to eq(8)
+    end
+  end
 end
 

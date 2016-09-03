@@ -4,7 +4,7 @@ class Node_sorter < Node
     #this will take an unsorted linked list and create a queue of nodes to be passed into the next program
     current = @root
     node_array = []
-    counter = 0
+    # counter = 0
     while current
       if current.bigger
         temp = current
