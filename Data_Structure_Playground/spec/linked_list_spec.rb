@@ -33,6 +33,15 @@ describe '#Linked_list' do
       list.add_ordered_node(1)
       expect(list.root.value).to be <(list.tail.value)
     end
+    it "sorts multiple values" do
+      list.add_ordered_node(8)
+      list.add_ordered_node(2)
+      list.add_ordered_node(5)
+      list.add_ordered_node(15)
+      expect(list.root.value).to be<(list.root.bigger.value)
+      expect(list.tail.value).to be>(list.tail.smaller.value)
+      expect(list.root.bigger.value).to equal(5)
+    end
   end
 end
 

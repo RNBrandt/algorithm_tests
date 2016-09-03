@@ -27,6 +27,7 @@ class Linked_list < Node_sorter
 
   def add_ordered_node(value)
     node = Node.new(value)
+    current = @root
     if !@tail
       @tail = node
       @root = node
@@ -63,3 +64,19 @@ class Linked_list < Node_sorter
     return following_pointer.value
   end
 end
+
+
+list = Linked_list.new
+
+p list.add_ordered_node(8)
+p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+p list.add_ordered_node(2)
+p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+p list.add_ordered_node(5)
+p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+list.add_ordered_node(15)
+
+p list.root.value
+# p list.root.bigger.value
+# p list.root.bigger.bigger.value
+# p list.root.bigger.bigger.bigger.value
