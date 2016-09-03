@@ -27,7 +27,7 @@ describe '#Linked_list' do
     end
   end
 
-  context "When there are multiple values added to an ordered list" do
+  context "When there are several values added to an ordered list" do
     it "sorts the values" do
       list.add_ordered_node(8)
       list.add_ordered_node(1)
