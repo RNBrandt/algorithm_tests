@@ -19,7 +19,7 @@ describe '#Linked_list' do
     end
   end
 
-  context "When there are multiple values added to an unordered list" do
+  context "If  there are multiple values added to an unordered list" do
     it "does not order the values" do
       list.add_unordered_node(8)
       list.add_unordered_node(1)
