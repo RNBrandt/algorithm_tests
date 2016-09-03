@@ -43,17 +43,12 @@ class Linked_list < Node_sorter
       @tail = node
     else
       until current.value >= node.value
-        p "until current value #{current.value}"
         current = current.bigger
       end
-      p "current.value #{current.value} node.value #{node.value}"
       node.smaller = current.smaller
       current.smaller.bigger = node
-      p "current.smaller #{current.smaller.value} node.smaller #{node.smaller.value}"
       current.smaller = node
-      p "current.smaller #{current.smaller.value}"
       node.bigger = current
-      puts "node.bigger #{node.bigger.value}"
     end
   end
 
