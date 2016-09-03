@@ -56,7 +56,7 @@ describe '#Linked_list' do
       list.add_ordered_node(15)
       expect(list.find_nth_from_end(2)).to equal(8)
     end
-  it "Will return the value of the node from the nth from the end with an unordered linked list" do
+    it "Will return the value of the node from the nth from the end with an unordered linked list" do
       list.add_unordered_node(8)
       list.add_unordered_node(2)
       list.add_unordered_node(5)
