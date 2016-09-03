@@ -19,7 +19,7 @@ describe '#Linked_list' do
     end
   end
 
-  context "If  there are multiple values added to an unordered list" do
+  context "If there are multiple values added to an unordered list" do
     it "does not order the values" do
       list.add_unordered_node(8)
       list.add_unordered_node(1)
@@ -41,6 +41,27 @@ describe '#Linked_list' do
       expect(list.root.value).to be<(list.root.bigger.value)
       expect(list.tail.value).to be>(list.tail.smaller.value)
       expect(list.root.bigger.value).to equal(5)
+    end
+  end
+  context "When looking for the value from the end of the list" do
+    it "Will return an error string if there are fewer nodes than values requested" do
+      list.add_unordered_node(8)
+      list.add_unordered_node(1)
+      expect(list.find_nth_from_end(5)).to eq("There aren't 5 values")
+    end
+    it "Will return the value of the node from the nth from the end with an ordered linked list" do
+      list.add_ordered_node(8)
+      list.add_ordered_node(2)
+      list.add_ordered_node(5)
+      list.add_ordered_node(15)
+      expect(list.find_nth_from_end(2)).to equal(8)
+    end
+  it "Will return the value of the node from the nth from the end with an unordered linked list" do
+      list.add_unordered_node(8)
+      list.add_unordered_node(2)
+      list.add_unordered_node(5)
+      list.add_unordered_node(15)
+      expect(list.find_nth_from_end(2)).to equal(5)
     end
   end
 end
