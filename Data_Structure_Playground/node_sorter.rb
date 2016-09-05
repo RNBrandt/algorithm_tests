@@ -30,6 +30,7 @@ class Node_sorter < Node
     right = usna.slice(mid..usna.length)
     return sort_helper(sort_unsorted_node_array(left), sort_unsorted_node_array(right))
   end
+private
 
   def sort_helper(array_1, array_2)
     pointer_1 = 0
